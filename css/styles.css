@@ -1,0 +1,33 @@
+body, html {
+    height: 100%;
+}
+#mapContainer{
+	width:100vw;
+	height:100vh;
+	background-color: #ffffff;
+}
+
+.controls{
+	 position:relative;
+   z-index:1000;
+   bottom:200px;
+   left:100px;
+}
+
+div#mapTooltip {
+  position: absolute;
+  display: inline-block;
+  padding: 10px;
+  font-family: "Open Sans" sans-serif;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #999;
+  border-radius: 2px;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 1;
+}
+
+.bw {
+        filter: grayscale(100%);
+      }
