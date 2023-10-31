@@ -233,14 +233,13 @@ function App() {
   }
   function addHighResPopdotdensity500PMTileslyr() {
     var lyrSource = new ol_pmtiles__WEBPACK_IMPORTED_MODULE_2__.PMTilesVectorSource({
-      // url: "data/pmtiles/acs5yr2021popdotdensity500highres.pmtiles",
+      url: "data/pmtiles/acs5yr2021popdotdensity500highres.pmtiles",
       // url: "https://wipv-grsp-8.cdc.gov/GRASP/Diabetes/data/pmtiles/acs5yr2021popdotdensity500highresv2.pmtiles",
       // url: "https://geo.kbatchu.workers.dev/acs5yr2021popdotdensity500highresv2/0/0/0.mvt",
       // url: "https://kbatchu.dev/acs5yr2021popdotdensity500highresv2/0/0/0.mvt",
       // url: "https://pub-510dd9c34d044d1386de1496d4a05fa9.r2.dev/acs5yr2021popdotdensity500highresv2.pmtiles", // ? 27Oct2023 This r2 url works but is slow because it is rate-limited by Cloudflare for development purposes only
       // url: "https://kbatchu.dev/acs5yr2021popdotdensity500highresv2.pmtiles",
-      url: "https://pmtiles.kbatchu.dev/acs5yr2021popdotdensity500highresv2/0/0/0.mvt",
-      // ? cloudflare
+      // url: "https://pmtiles.kbatchu.dev/acs5yr2021popdotdensity500highresv2/0/0/0.mvt", // ? cloudflare
       // url: "https://github.com/kbatchu/PMTilesRepo/releases/download/PopDotDensity500/acs5yr2021popdotdensity500highresv2.pmtiles", // ? Gives CORS error
       attributions: ["© created by GRASP/CDC"]
     });
