@@ -233,7 +233,7 @@ function App() {
   }
   function addHighResPopdotdensity500PMTileslyr() {
     var lyrSource = new ol_pmtiles__WEBPACK_IMPORTED_MODULE_2__.PMTilesVectorSource({
-      url: "https://github.com/kbatchu/kbatchu.github.io/raw/aa981768fb3375e9e54b444ccc27b6aacc8eb9d3/data/pmtiles/acs5yr2021popdotdensity500highresv2.pmtiles",
+      url: "https://raw.githubusercontent.com/{kbatchu}/{kbatchu.github.io}/{main}/{data}/{pmtiles}/{acs5yr2021popdotdensity500highresv2.pmtiles}",
       // url: "https://wipv-grsp-8.cdc.gov/GRASP/Diabetes/data/pmtiles/acs5yr2021popdotdensity500highresv2.pmtiles",
       // url: "https://geo.kbatchu.workers.dev/acs5yr2021popdotdensity500highresv2/0/0/0.mvt",
       // url: "https://kbatchu.dev/acs5yr2021popdotdensity500highresv2/0/0/0.mvt",
