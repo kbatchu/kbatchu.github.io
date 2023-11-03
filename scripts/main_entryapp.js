@@ -741,9 +741,9 @@ function App() {
 
             // addCensusTractsPMTilesLyr(); // 20Oct2023
             //  const cloudflareResponse = await callCloudflareWorker("Hello World!");
-            // addHighResPopdotdensity500GitHubPMTileslyr(); // 19Oct2023
+            addHighResPopdotdensity500GitHubPMTileslyr(); // 19Oct2023
             // addLowResPopdotdensity500PMTileslyr(); // 18Oct2023
-            addPopDotDenity500CloudflarePMTilesLyr(); // 01Nov2023
+            // addPopDotDenity500CloudflarePMTilesLyr(); // 01Nov2023
           case 3:
           case "end":
             return _context10.stop();
