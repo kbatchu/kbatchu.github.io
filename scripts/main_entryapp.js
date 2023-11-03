@@ -54,17 +54,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./scripts/lib/jquery-min.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var ol_Map__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ol/Map */ "./node_modules/ol/Map.js");
-/* harmony import */ var ol_View__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ol/View */ "./node_modules/ol/View.js");
+/* harmony import */ var ol_Map__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ol/Map */ "./node_modules/ol/Map.js");
+/* harmony import */ var ol_View__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ol/View */ "./node_modules/ol/View.js");
 /* harmony import */ var ol_proj__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ol/proj */ "./node_modules/ol/proj.js");
-/* harmony import */ var ol_source_OSM__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ol/source/OSM */ "./node_modules/ol/source/OSM.js");
-/* harmony import */ var ol_source_DataTile__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ol/source/DataTile */ "./node_modules/ol/source/DataTile.js");
-/* harmony import */ var ol_source_Vector__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ol/source/Vector */ "./node_modules/ol/source/Vector.js");
+/* harmony import */ var ol_source_OSM__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ol/source/OSM */ "./node_modules/ol/source/OSM.js");
+/* harmony import */ var ol_source_DataTile__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ol/source/DataTile */ "./node_modules/ol/source/DataTile.js");
+/* harmony import */ var ol_source_Vector__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ol/source/Vector */ "./node_modules/ol/source/Vector.js");
 /* harmony import */ var ol_layer_VectorTile__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ol/layer/VectorTile */ "./node_modules/ol/layer/VectorTile.js");
-/* harmony import */ var ol_layer_Vector__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ol/layer/Vector */ "./node_modules/ol/layer/Vector.js");
-/* harmony import */ var ol_layer_WebGLTile__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ol/layer/WebGLTile */ "./node_modules/ol/layer/WebGLTile.js");
-/* harmony import */ var ol_format_TopoJSON__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ol/format/TopoJSON */ "./node_modules/ol/format/TopoJSON.js");
-/* harmony import */ var ol_layer_Tile__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ol/layer/Tile */ "./node_modules/ol/layer/Tile.js");
+/* harmony import */ var ol_source_VectorTile__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ol/source/VectorTile */ "./node_modules/ol/source/VectorTile.js");
+/* harmony import */ var ol_layer_Vector__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ol/layer/Vector */ "./node_modules/ol/layer/Vector.js");
+/* harmony import */ var ol_layer_WebGLTile__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ol/layer/WebGLTile */ "./node_modules/ol/layer/WebGLTile.js");
+/* harmony import */ var ol_format_TopoJSON__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ol/format/TopoJSON */ "./node_modules/ol/format/TopoJSON.js");
+/* harmony import */ var ol_layer_Tile__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ol/layer/Tile */ "./node_modules/ol/layer/Tile.js");
+/* harmony import */ var ol_format_MVT__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ol/format/MVT */ "./node_modules/ol/format/MVT.js");
 /* harmony import */ var ol_pmtiles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ol-pmtiles */ "./node_modules/ol-pmtiles/src/index.js");
 /* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Style.js");
 /* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Stroke.js");
@@ -91,10 +93,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
+ // 01Nov2023
 
 
 
 
+
+// 01Nov2023 import { VectorTile } from "ol";
 
 // import PMTilesVectorLayerSources from "./PMTilesVectorLayerSources";
 // import HelperUtil from "./helperutils";
@@ -231,16 +236,16 @@ function App() {
     });
     mMapLayers.push(pmtilesVectorLayer);
   }
-  function addHighResPopdotdensity500PMTileslyr() {
+  function addHighResPopdotdensity500GitHubPMTileslyr() {
     var lyrSource = new ol_pmtiles__WEBPACK_IMPORTED_MODULE_2__.PMTilesVectorSource({
       url: "https://raw.githubusercontent.com/kbatchu/kbatchu.github.io/main/data/pmtiles/acs5yr2021popdotdensity500highresv2.pmtiles",
+      // ? this works on local computer and on github pages,  31Oct2023
       // url: "https://wipv-grsp-8.cdc.gov/GRASP/Diabetes/data/pmtiles/acs5yr2021popdotdensity500highresv2.pmtiles",
       // url: "https://geo.kbatchu.workers.dev/acs5yr2021popdotdensity500highresv2/0/0/0.mvt",
       // url: "https://kbatchu.dev/acs5yr2021popdotdensity500highresv2/0/0/0.mvt",
       // url: "https://pub-510dd9c34d044d1386de1496d4a05fa9.r2.dev/acs5yr2021popdotdensity500highresv2.pmtiles", // ? 27Oct2023 This r2 url works but is slow because it is rate-limited by Cloudflare for development purposes only
       // url: "https://kbatchu.dev/acs5yr2021popdotdensity500highresv2.pmtiles",
       // url: "https://pmtiles.kbatchu.dev/acs5yr2021popdotdensity500highresv2/0/0/0.mvt", // ? cloudflare
-      // url: "https://github.com/kbatchu/PMTilesRepo/releases/download/PopDotDensity500/acs5yr2021popdotdensity500highresv2.pmtiles", // ? Gives CORS error
       attributions: ["© created by GRASP/CDC"]
     });
     var pointStyle = new ol_style__WEBPACK_IMPORTED_MODULE_6__["default"]({
@@ -263,7 +268,7 @@ function App() {
   }
 
   // 20Oct2023
-  function addCensusTractsPMTilesLyr() {
+  function addCensusTractsPMTilesLyrUsingOLPMTilesLib() {
     var lyrSource = new ol_pmtiles__WEBPACK_IMPORTED_MODULE_2__.PMTilesVectorSource({
       // url: "data/pmtiles/acs5yr2021censustractsv2.pmtiles",
       url: "https://wipv-grsp-8.cdc.gov/GRASP/Diabetes/data/pmtiles/acs5yr2021censustractsv2.pmtiles",
@@ -279,7 +284,7 @@ function App() {
       })
     });
     var pmtilesVectorLayer = new ol_layer_VectorTile__WEBPACK_IMPORTED_MODULE_9__["default"]({
-      declutter: true,
+      declutter: false,
       minZoom: 5,
       maxZoom: 13,
       source: lyrSource,
@@ -296,6 +301,32 @@ function App() {
     });
 
     mMapLayers.push(pmtilesVectorLayer);
+  }
+
+  // 01Nov2023
+  function addPopDotDenity500CloudflarePMTilesLyr() {
+    var lyrSource = new ol_source_VectorTile__WEBPACK_IMPORTED_MODULE_11__["default"]({
+      attributions: ["© created by CDC/GRASP"],
+      format: new ol_format_MVT__WEBPACK_IMPORTED_MODULE_12__["default"](),
+      url: "https://pmtiles.kbatchu.dev/acs5yr2021popdotdensity500highresv2/0/0/0.mvt"
+    });
+    var pointStyle = new ol_style__WEBPACK_IMPORTED_MODULE_6__["default"]({
+      image: new ol_style__WEBPACK_IMPORTED_MODULE_10__["default"]({
+        radius: 1,
+        fill: new ol_style__WEBPACK_IMPORTED_MODULE_8__["default"]({
+          color: "rgba(17,123,227,0.5)"
+        })
+      })
+    });
+    var vectorLyr = new ol_layer_VectorTile__WEBPACK_IMPORTED_MODULE_9__["default"]({
+      declutter: false,
+      minZoom: 5,
+      maxZoom: 13,
+      source: lyrSource,
+      title: "US 2021 Census Tracts",
+      style: pointStyle
+    });
+    mMapLayers.push(vectorLyr);
   }
   function createPMTilesMultiLyrVectorLayer() {
     return _createPMTilesMultiLyrVectorLayer.apply(this, arguments);
@@ -374,7 +405,7 @@ function App() {
               attributions: ["© created by GRASP, ATSDR/CDC"],
               tileSize: [256, 256]
             });
-            lyr = new ol_layer_WebGLTile__WEBPACK_IMPORTED_MODULE_11__["default"]({
+            lyr = new ol_layer_WebGLTile__WEBPACK_IMPORTED_MODULE_13__["default"]({
               opacity: 0.5,
               source: lyrSource,
               title: title
@@ -503,9 +534,9 @@ function App() {
     var sunEl = ["*", Math.PI / 180, ["var", "sunEl"]];
     var sunAz = ["*", Math.PI / 180, ["var", "sunAz"]];
     var cosIncidence = ["+", ["*", ["sin", sunEl], ["cos", slope]], ["*", ["*", ["cos", sunEl], ["sin", slope]], ["cos", ["-", sunAz, aspect]]]];
-    mShadedReliefLyr = new ol_layer_WebGLTile__WEBPACK_IMPORTED_MODULE_11__["default"]({
+    mShadedReliefLyr = new ol_layer_WebGLTile__WEBPACK_IMPORTED_MODULE_13__["default"]({
       opacity: 0.5,
-      source: new ol_source_DataTile__WEBPACK_IMPORTED_MODULE_12__["default"]({
+      source: new ol_source_DataTile__WEBPACK_IMPORTED_MODULE_14__["default"]({
         loader: loader,
         wrapX: true,
         maxZoom: 9
@@ -559,8 +590,8 @@ function App() {
     return lyr;
   }
   function addOverlayLayer() {
-    var overlayLyrSource = new ol_source_Vector__WEBPACK_IMPORTED_MODULE_13__["default"]();
-    var lyr = new ol_layer_Vector__WEBPACK_IMPORTED_MODULE_14__["default"]({
+    var overlayLyrSource = new ol_source_Vector__WEBPACK_IMPORTED_MODULE_15__["default"]();
+    var lyr = new ol_layer_Vector__WEBPACK_IMPORTED_MODULE_16__["default"]({
       title: "Map Overlay",
       source: overlayLyrSource
     });
@@ -609,11 +640,11 @@ function App() {
                 width: 1
               })
             }); // TODO: Check why this throws Range error
-            lyr = new ol_layer_Vector__WEBPACK_IMPORTED_MODULE_14__["default"]({
-              source: new ol_source_Vector__WEBPACK_IMPORTED_MODULE_13__["default"]({
+            lyr = new ol_layer_Vector__WEBPACK_IMPORTED_MODULE_16__["default"]({
+              source: new ol_source_Vector__WEBPACK_IMPORTED_MODULE_15__["default"]({
                 // url: "data/DiabetesMapCountyTopoJSON.json",
                 url: "https://openlayers.org/en/latest/examples/data/topojson/world-110m.json",
-                format: new ol_format_TopoJSON__WEBPACK_IMPORTED_MODULE_15__["default"]({
+                format: new ol_format_TopoJSON__WEBPACK_IMPORTED_MODULE_17__["default"]({
                   dataProjection: "EPSG:4326",
                   featureProjection: "EPSG:3857",
                   layers: ["countries"]
@@ -695,9 +726,9 @@ function App() {
       return _regeneratorRuntime().wrap(function _callee10$(_context10) {
         while (1) switch (_context10.prev = _context10.next) {
           case 0:
-            baseMapLyr = new ol_layer_Tile__WEBPACK_IMPORTED_MODULE_16__["default"]({
+            baseMapLyr = new ol_layer_Tile__WEBPACK_IMPORTED_MODULE_18__["default"]({
               className: "bw",
-              source: new ol_source_OSM__WEBPACK_IMPORTED_MODULE_17__["default"]()
+              source: new ol_source_OSM__WEBPACK_IMPORTED_MODULE_19__["default"]()
             });
             mMapLayers.push(baseMapLyr);
 
@@ -710,8 +741,9 @@ function App() {
 
             // addCensusTractsPMTilesLyr(); // 20Oct2023
             //  const cloudflareResponse = await callCloudflareWorker("Hello World!");
-            addHighResPopdotdensity500PMTileslyr(); // 19Oct2023
+            // addHighResPopdotdensity500GitHubPMTileslyr(); // 19Oct2023
             // addLowResPopdotdensity500PMTileslyr(); // 18Oct2023
+            addPopDotDenity500CloudflarePMTilesLyr(); // 01Nov2023
           case 3:
           case "end":
             return _context10.stop();
@@ -851,11 +883,11 @@ function App() {
           case 2:
             // Proj.useGeographic(); // 20Jan2023
 
-            mMapView = new ol_View__WEBPACK_IMPORTED_MODULE_18__["default"]({
+            mMapView = new ol_View__WEBPACK_IMPORTED_MODULE_20__["default"]({
               center: ol_proj__WEBPACK_IMPORTED_MODULE_1__.fromLonLat([-95.7129, 37.0902]),
               zoom: 4.2
             });
-            mMap = new ol_Map__WEBPACK_IMPORTED_MODULE_19__["default"]({
+            mMap = new ol_Map__WEBPACK_IMPORTED_MODULE_21__["default"]({
               layers: mMapLayers,
               target: mMapContainerID,
               view: mMapView
