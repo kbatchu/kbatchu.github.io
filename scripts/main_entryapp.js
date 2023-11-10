@@ -41,6 +41,71 @@ __webpack_require__(/*! regenerator-runtime/runtime */ "./node_modules/regenerat
 
 /***/ }),
 
+/***/ "./scripts/LimitedExtentXYZ.js":
+/*!*************************************!*\
+  !*** ./scripts/LimitedExtentXYZ.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ LimitedExtentXYZ)
+/* harmony export */ });
+/* harmony import */ var ol_tilegrid__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ol/tilegrid */ "./node_modules/ol/tilegrid.js");
+/* harmony import */ var ol_tilegrid_TileGrid__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ol/tilegrid/TileGrid */ "./node_modules/ol/tilegrid/TileGrid.js");
+/* harmony import */ var ol_proj__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ol/proj */ "./node_modules/ol/proj.js");
+/* harmony import */ var ol_source_XYZ__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ol/source/XYZ */ "./node_modules/ol/source/XYZ.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+var LimitedExtentXYZ = /*#__PURE__*/function (_XYZ) {
+  _inherits(LimitedExtentXYZ, _XYZ);
+  var _super = _createSuper(LimitedExtentXYZ);
+  function LimitedExtentXYZ(options) {
+    _classCallCheck(this, LimitedExtentXYZ);
+    var tileGrid = ol_tilegrid__WEBPACK_IMPORTED_MODULE_1__.createXYZ({
+      extent: options.projection ? ol_proj__WEBPACK_IMPORTED_MODULE_0__.get(options.projection).getExtent() : undefined,
+      tileSize: options.tileSize,
+      minZoom: options.minZoom,
+      maxZoom: options.maxZoom,
+      maxResolution: options.maxResolution
+    });
+    var baseOptions = _objectSpread({
+      tileGrid: new ol_tilegrid_TileGrid__WEBPACK_IMPORTED_MODULE_2__["default"]({
+        extent: options.extent,
+        origin: tileGrid.getOrigin(0),
+        resolutions: tileGrid.getResolutions(),
+        tileSize: tileGrid.getTileSize(0),
+        minZoom: tileGrid.getMinZoom()
+      })
+    }, options);
+    delete baseOptions.extent;
+    return _super.call(this, baseOptions);
+  }
+  return _createClass(LimitedExtentXYZ);
+}(ol_source_XYZ__WEBPACK_IMPORTED_MODULE_3__["default"]);
+
+
+/***/ }),
+
 /***/ "./scripts/app.js":
 /*!************************!*\
   !*** ./scripts/app.js ***!
@@ -54,28 +119,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./scripts/lib/jquery-min.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var ol_Map__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ol/Map */ "./node_modules/ol/Map.js");
-/* harmony import */ var ol_View__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ol/View */ "./node_modules/ol/View.js");
+/* harmony import */ var ol_Map__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ol/Map */ "./node_modules/ol/Map.js");
+/* harmony import */ var ol_View__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ol/View */ "./node_modules/ol/View.js");
 /* harmony import */ var ol_proj__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ol/proj */ "./node_modules/ol/proj.js");
-/* harmony import */ var ol_source_OSM__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ol/source/OSM */ "./node_modules/ol/source/OSM.js");
-/* harmony import */ var ol_source_DataTile__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ol/source/DataTile */ "./node_modules/ol/source/DataTile.js");
-/* harmony import */ var ol_source_Vector__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ol/source/Vector */ "./node_modules/ol/source/Vector.js");
-/* harmony import */ var ol_layer_VectorTile__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ol/layer/VectorTile */ "./node_modules/ol/layer/VectorTile.js");
-/* harmony import */ var ol_source_VectorTile__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ol/source/VectorTile */ "./node_modules/ol/source/VectorTile.js");
-/* harmony import */ var ol_layer_Vector__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ol/layer/Vector */ "./node_modules/ol/layer/Vector.js");
-/* harmony import */ var ol_layer_WebGLTile__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ol/layer/WebGLTile */ "./node_modules/ol/layer/WebGLTile.js");
-/* harmony import */ var ol_format_TopoJSON__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ol/format/TopoJSON */ "./node_modules/ol/format/TopoJSON.js");
-/* harmony import */ var ol_layer_Tile__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ol/layer/Tile */ "./node_modules/ol/layer/Tile.js");
-/* harmony import */ var ol_format_MVT__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ol/format/MVT */ "./node_modules/ol/format/MVT.js");
+/* harmony import */ var ol_source_OSM__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ol/source/OSM */ "./node_modules/ol/source/OSM.js");
+/* harmony import */ var ol_source_DataTile__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ol/source/DataTile */ "./node_modules/ol/source/DataTile.js");
+/* harmony import */ var ol_source_Vector__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ol/source/Vector */ "./node_modules/ol/source/Vector.js");
+/* harmony import */ var ol_layer_VectorTile__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ol/layer/VectorTile */ "./node_modules/ol/layer/VectorTile.js");
+/* harmony import */ var ol_source_VectorTile__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ol/source/VectorTile */ "./node_modules/ol/source/VectorTile.js");
+/* harmony import */ var ol_layer_Vector__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ol/layer/Vector */ "./node_modules/ol/layer/Vector.js");
+/* harmony import */ var ol_layer_WebGLTile__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ol/layer/WebGLTile */ "./node_modules/ol/layer/WebGLTile.js");
+/* harmony import */ var ol_format_TopoJSON__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ol/format/TopoJSON */ "./node_modules/ol/format/TopoJSON.js");
+/* harmony import */ var ol_layer_Tile__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ol/layer/Tile */ "./node_modules/ol/layer/Tile.js");
+/* harmony import */ var ol_format_MVT__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ol/format/MVT */ "./node_modules/ol/format/MVT.js");
 /* harmony import */ var ol_pmtiles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ol-pmtiles */ "./node_modules/ol-pmtiles/src/index.js");
-/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Style.js");
-/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Stroke.js");
-/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Fill.js");
-/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Circle.js");
+/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Style.js");
+/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Stroke.js");
+/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Fill.js");
+/* harmony import */ var ol_style__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ol/style */ "./node_modules/ol/style/Circle.js");
 /* harmony import */ var pmtiles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! pmtiles */ "./node_modules/pmtiles/dist/index.mjs");
-/* harmony import */ var _lib_d3_v4_min__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./lib/d3_v4-min */ "./scripts/lib/d3_v4-min.js");
-/* harmony import */ var _lib_d3_v4_min__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_lib_d3_v4_min__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _helperutils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./helperutils */ "./scripts/helperutils.js");
+/* harmony import */ var _LimitedExtentXYZ__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./LimitedExtentXYZ */ "./scripts/LimitedExtentXYZ.js");
+/* harmony import */ var _lib_d3_v4_min__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./lib/d3_v4-min */ "./scripts/lib/d3_v4-min.js");
+/* harmony import */ var _lib_d3_v4_min__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_lib_d3_v4_min__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _helperutils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./helperutils */ "./scripts/helperutils.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw new Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw new Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -93,7 +159,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
+
  // 01Nov2023
+
 
 
 
@@ -121,12 +189,12 @@ function App() {
   var mHighlightedBldgFootprintFeat; // 07Oct2023
   var mCountiesMapTopoJSON; // 17Oct2023
   var mHighlightedCensusTractFeatProps; // 23Oct2023
-  var mHighlightedPolyStyle = new ol_style__WEBPACK_IMPORTED_MODULE_6__["default"]({
-    stroke: new ol_style__WEBPACK_IMPORTED_MODULE_7__["default"]({
+  var mHighlightedPolyStyle = new ol_style__WEBPACK_IMPORTED_MODULE_7__["default"]({
+    stroke: new ol_style__WEBPACK_IMPORTED_MODULE_8__["default"]({
       color: "gray",
       width: 1
     }),
-    fill: new ol_style__WEBPACK_IMPORTED_MODULE_8__["default"]({
+    fill: new ol_style__WEBPACK_IMPORTED_MODULE_9__["default"]({
       color: "orange"
     })
   });
@@ -144,12 +212,12 @@ function App() {
     } else {
       color = "yellow";
     }
-    var bldgStyle = new ol_style__WEBPACK_IMPORTED_MODULE_6__["default"]({
-      fill: new ol_style__WEBPACK_IMPORTED_MODULE_8__["default"]({
+    var bldgStyle = new ol_style__WEBPACK_IMPORTED_MODULE_7__["default"]({
+      fill: new ol_style__WEBPACK_IMPORTED_MODULE_9__["default"]({
         // color: "rgba(20,20,20,0.9)"
         color: color
       }),
-      stroke: new ol_style__WEBPACK_IMPORTED_MODULE_7__["default"]({
+      stroke: new ol_style__WEBPACK_IMPORTED_MODULE_8__["default"]({
         color: color,
         width: 1
       })
@@ -170,11 +238,11 @@ function App() {
     } else if (popCount >= 4000) {
       color = "red";
     }
-    var censusTractStyle = new ol_style__WEBPACK_IMPORTED_MODULE_6__["default"]({
-      fill: new ol_style__WEBPACK_IMPORTED_MODULE_8__["default"]({
+    var censusTractStyle = new ol_style__WEBPACK_IMPORTED_MODULE_7__["default"]({
+      fill: new ol_style__WEBPACK_IMPORTED_MODULE_9__["default"]({
         color: color
       }),
-      stroke: new ol_style__WEBPACK_IMPORTED_MODULE_7__["default"]({
+      stroke: new ol_style__WEBPACK_IMPORTED_MODULE_8__["default"]({
         color: color,
         width: 1
       })
@@ -187,16 +255,16 @@ function App() {
       url: URL,
       attributions: ["© Provided by VIDA"]
     });
-    var highlightedBldgFootprintFeatStyle = new ol_style__WEBPACK_IMPORTED_MODULE_6__["default"]({
-      stroke: new ol_style__WEBPACK_IMPORTED_MODULE_7__["default"]({
+    var highlightedBldgFootprintFeatStyle = new ol_style__WEBPACK_IMPORTED_MODULE_7__["default"]({
+      stroke: new ol_style__WEBPACK_IMPORTED_MODULE_8__["default"]({
         color: "orange",
         width: 1
       }),
-      fill: new ol_style__WEBPACK_IMPORTED_MODULE_8__["default"]({
+      fill: new ol_style__WEBPACK_IMPORTED_MODULE_9__["default"]({
         color: "orange"
       })
     });
-    var pmtilesVectorLayer = new ol_layer_VectorTile__WEBPACK_IMPORTED_MODULE_9__["default"]({
+    var pmtilesVectorLayer = new ol_layer_VectorTile__WEBPACK_IMPORTED_MODULE_10__["default"]({
       declutter: true,
       source: lyrSource,
       title: "World Building Footprints",
@@ -217,16 +285,16 @@ function App() {
       url: "https://wipv-grsp-8.cdc.gov/GRASP/Diabetes/data/pmtiles/acs5yr2021popdotdensity500lowres.pmtiles",
       attributions: ["© created by CDC/GRASP"]
     });
-    var pointStyle = new ol_style__WEBPACK_IMPORTED_MODULE_6__["default"]({
-      image: new ol_style__WEBPACK_IMPORTED_MODULE_10__["default"]({
+    var pointStyle = new ol_style__WEBPACK_IMPORTED_MODULE_7__["default"]({
+      image: new ol_style__WEBPACK_IMPORTED_MODULE_11__["default"]({
         radius: 1,
-        fill: new ol_style__WEBPACK_IMPORTED_MODULE_8__["default"]({
+        fill: new ol_style__WEBPACK_IMPORTED_MODULE_9__["default"]({
           // color: "rgba(0,0,255,0.9)"
           color: "rgba(17,123,227,0.5)"
         })
       })
     });
-    var pmtilesVectorLayer = new ol_layer_VectorTile__WEBPACK_IMPORTED_MODULE_9__["default"]({
+    var pmtilesVectorLayer = new ol_layer_VectorTile__WEBPACK_IMPORTED_MODULE_10__["default"]({
       declutter: false,
       minZoom: 0,
       maxZoom: 13,
@@ -248,15 +316,15 @@ function App() {
       // url: "https://pmtiles.kbatchu.dev/acs5yr2021popdotdensity500highresv2/0/0/0.mvt", // ? cloudflare
       attributions: ["© created by GRASP/CDC"]
     });
-    var pointStyle = new ol_style__WEBPACK_IMPORTED_MODULE_6__["default"]({
-      image: new ol_style__WEBPACK_IMPORTED_MODULE_10__["default"]({
+    var pointStyle = new ol_style__WEBPACK_IMPORTED_MODULE_7__["default"]({
+      image: new ol_style__WEBPACK_IMPORTED_MODULE_11__["default"]({
         radius: 1,
-        fill: new ol_style__WEBPACK_IMPORTED_MODULE_8__["default"]({
+        fill: new ol_style__WEBPACK_IMPORTED_MODULE_9__["default"]({
           color: "rgba(17,123,227,0.5)"
         })
       })
     });
-    var pmtilesVectorLayer = new ol_layer_VectorTile__WEBPACK_IMPORTED_MODULE_9__["default"]({
+    var pmtilesVectorLayer = new ol_layer_VectorTile__WEBPACK_IMPORTED_MODULE_10__["default"]({
       declutter: false,
       minZoom: 0,
       maxZoom: 13,
@@ -274,16 +342,16 @@ function App() {
       url: "https://wipv-grsp-8.cdc.gov/GRASP/Diabetes/data/pmtiles/acs5yr2021censustractsv2.pmtiles",
       attributions: ["© created by CDC/GRASP"]
     });
-    var polyStyle = new ol_style__WEBPACK_IMPORTED_MODULE_6__["default"]({
-      stroke: new ol_style__WEBPACK_IMPORTED_MODULE_7__["default"]({
+    var polyStyle = new ol_style__WEBPACK_IMPORTED_MODULE_7__["default"]({
+      stroke: new ol_style__WEBPACK_IMPORTED_MODULE_8__["default"]({
         color: "gray",
         width: 1
       }),
-      fill: new ol_style__WEBPACK_IMPORTED_MODULE_8__["default"]({
+      fill: new ol_style__WEBPACK_IMPORTED_MODULE_9__["default"]({
         color: "cyan"
       })
     });
-    var pmtilesVectorLayer = new ol_layer_VectorTile__WEBPACK_IMPORTED_MODULE_9__["default"]({
+    var pmtilesVectorLayer = new ol_layer_VectorTile__WEBPACK_IMPORTED_MODULE_10__["default"]({
       declutter: false,
       minZoom: 5,
       maxZoom: 13,
@@ -304,21 +372,21 @@ function App() {
   }
 
   // 01Nov2023
-  function addPopDotDenity500CloudflarePMTilesLyr() {
-    var lyrSource = new ol_source_VectorTile__WEBPACK_IMPORTED_MODULE_11__["default"]({
+  function addCloudflarePopDotDenity500PMTilesLyr() {
+    var lyrSource = new ol_source_VectorTile__WEBPACK_IMPORTED_MODULE_12__["default"]({
       attributions: ["© created by CDC/GRASP"],
-      format: new ol_format_MVT__WEBPACK_IMPORTED_MODULE_12__["default"](),
-      url: "https://pmtiles.kbatchu.dev/acs5yr2021popdotdensity500highresv2/0/0/0.mvt"
+      format: new ol_format_MVT__WEBPACK_IMPORTED_MODULE_13__["default"](),
+      url: "https://pmtiles.kbatchu.dev/acs5yr2021popdotdensity500highresv2/{z}/{x}/{y}.mvt"
     });
-    var pointStyle = new ol_style__WEBPACK_IMPORTED_MODULE_6__["default"]({
-      image: new ol_style__WEBPACK_IMPORTED_MODULE_10__["default"]({
+    var pointStyle = new ol_style__WEBPACK_IMPORTED_MODULE_7__["default"]({
+      image: new ol_style__WEBPACK_IMPORTED_MODULE_11__["default"]({
         radius: 1,
-        fill: new ol_style__WEBPACK_IMPORTED_MODULE_8__["default"]({
+        fill: new ol_style__WEBPACK_IMPORTED_MODULE_9__["default"]({
           color: "rgba(17,123,227,0.5)"
         })
       })
     });
-    var vectorLyr = new ol_layer_VectorTile__WEBPACK_IMPORTED_MODULE_9__["default"]({
+    var vectorLyr = new ol_layer_VectorTile__WEBPACK_IMPORTED_MODULE_10__["default"]({
       declutter: false,
       minZoom: 5,
       maxZoom: 13,
@@ -330,7 +398,23 @@ function App() {
   }
   function createPMTilesMultiLyrVectorLayer() {
     return _createPMTilesMultiLyrVectorLayer.apply(this, arguments);
-  } // 13Oct2023
+  }
+  /*  // 10Nov2023
+  // 03Nov2023
+  function addCloudflareRasterPMTilesLyr() {
+    const lyrSource = new XYZ({
+      attributions: ["© created by GRASP, ATSDR/CDC"],
+      url: "https://pmtiles.kbatchu.dev/Georgia_CensusTracts_PopDotDensity_100_MBTiles_Raster/{z}/{x}/{y}.png",
+      tilePixelRatio: 2 // THIS IS IMPORTANT
+    });
+    const lyr = new WebGLTile({
+      opacity: 0.5,
+      source: lyrSource,
+      title: "Georgia Census Tracts Popdot Density 100"
+    });
+    mMapLayers.push(lyr); // 13Oct2023
+  } */
+  // 13Oct2023
   function _createPMTilesMultiLyrVectorLayer() {
     _createPMTilesMultiLyrVectorLayer = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
       var URL, lyrSource, fetchSource, pmtilesSource, pmtilesHeader, pmtilesMetadata, vectorLayers, j, i, vectorLyr, pmtilesVectorLayer;
@@ -362,7 +446,7 @@ function App() {
             for (i = 0; i < vectorLayers.length; i += 1) {
               vectorLyr = vectorLayers[i];
             }
-            pmtilesVectorLayer = new ol_layer_VectorTile__WEBPACK_IMPORTED_MODULE_9__["default"]({
+            pmtilesVectorLayer = new ol_layer_VectorTile__WEBPACK_IMPORTED_MODULE_10__["default"]({
               declutter: true,
               source: lyrSource,
               style: function style(feature) {
@@ -405,7 +489,7 @@ function App() {
               attributions: ["© created by GRASP, ATSDR/CDC"],
               tileSize: [256, 256]
             });
-            lyr = new ol_layer_WebGLTile__WEBPACK_IMPORTED_MODULE_13__["default"]({
+            lyr = new ol_layer_WebGLTile__WEBPACK_IMPORTED_MODULE_14__["default"]({
               opacity: 0.5,
               source: lyrSource,
               title: title
@@ -534,9 +618,9 @@ function App() {
     var sunEl = ["*", Math.PI / 180, ["var", "sunEl"]];
     var sunAz = ["*", Math.PI / 180, ["var", "sunAz"]];
     var cosIncidence = ["+", ["*", ["sin", sunEl], ["cos", slope]], ["*", ["*", ["cos", sunEl], ["sin", slope]], ["cos", ["-", sunAz, aspect]]]];
-    mShadedReliefLyr = new ol_layer_WebGLTile__WEBPACK_IMPORTED_MODULE_13__["default"]({
+    mShadedReliefLyr = new ol_layer_WebGLTile__WEBPACK_IMPORTED_MODULE_14__["default"]({
       opacity: 0.5,
-      source: new ol_source_DataTile__WEBPACK_IMPORTED_MODULE_14__["default"]({
+      source: new ol_source_DataTile__WEBPACK_IMPORTED_MODULE_15__["default"]({
         loader: loader,
         wrapX: true,
         maxZoom: 9
@@ -590,8 +674,8 @@ function App() {
     return lyr;
   }
   function addOverlayLayer() {
-    var overlayLyrSource = new ol_source_Vector__WEBPACK_IMPORTED_MODULE_15__["default"]();
-    var lyr = new ol_layer_Vector__WEBPACK_IMPORTED_MODULE_16__["default"]({
+    var overlayLyrSource = new ol_source_Vector__WEBPACK_IMPORTED_MODULE_16__["default"]();
+    var lyr = new ol_layer_Vector__WEBPACK_IMPORTED_MODULE_17__["default"]({
       title: "Map Overlay",
       source: overlayLyrSource
     });
@@ -631,20 +715,20 @@ function App() {
         while (1) switch (_context8.prev = _context8.next) {
           case 0:
             // await loadCountiesMapTopoJSON();
-            style = new ol_style__WEBPACK_IMPORTED_MODULE_6__["default"]({
-              fill: new ol_style__WEBPACK_IMPORTED_MODULE_8__["default"]({
+            style = new ol_style__WEBPACK_IMPORTED_MODULE_7__["default"]({
+              fill: new ol_style__WEBPACK_IMPORTED_MODULE_9__["default"]({
                 color: "rgba(255, 255, 255, 0.6)"
               }),
-              stroke: new ol_style__WEBPACK_IMPORTED_MODULE_7__["default"]({
+              stroke: new ol_style__WEBPACK_IMPORTED_MODULE_8__["default"]({
                 color: "#319FD3",
                 width: 1
               })
             }); // TODO: Check why this throws Range error
-            lyr = new ol_layer_Vector__WEBPACK_IMPORTED_MODULE_16__["default"]({
-              source: new ol_source_Vector__WEBPACK_IMPORTED_MODULE_15__["default"]({
+            lyr = new ol_layer_Vector__WEBPACK_IMPORTED_MODULE_17__["default"]({
+              source: new ol_source_Vector__WEBPACK_IMPORTED_MODULE_16__["default"]({
                 // url: "data/DiabetesMapCountyTopoJSON.json",
                 url: "https://openlayers.org/en/latest/examples/data/topojson/world-110m.json",
-                format: new ol_format_TopoJSON__WEBPACK_IMPORTED_MODULE_17__["default"]({
+                format: new ol_format_TopoJSON__WEBPACK_IMPORTED_MODULE_18__["default"]({
                   dataProjection: "EPSG:4326",
                   featureProjection: "EPSG:3857",
                   layers: ["countries"]
@@ -678,7 +762,7 @@ function App() {
   }
   function callCloudflareWorker(_x6) {
     return _callCloudflareWorker.apply(this, arguments);
-  }
+  } // 10Nov2023
   function _callCloudflareWorker() {
     _callCloudflareWorker = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee9(parameter) {
       var workerUrl, response, data;
@@ -717,18 +801,95 @@ function App() {
     }));
     return _callCloudflareWorker.apply(this, arguments);
   }
+  function addCloudflareRasterPMTilesLyr() {
+    return _addCloudflareRasterPMTilesLyr.apply(this, arguments);
+  } // 10Nov2023
+  function _addCloudflareRasterPMTilesLyr() {
+    _addCloudflareRasterPMTilesLyr = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee10() {
+      var rasterLyrExtent, lyrSource2, lyr;
+      return _regeneratorRuntime().wrap(function _callee10$(_context10) {
+        while (1) switch (_context10.prev = _context10.next) {
+          case 0:
+            // ? This source works but gets lots of 404 errors in the browser console
+            // ? because it is trying to get tiles outside the layer extent.
+            /*  const lyrSource1 = new XYZ({
+              // url: "https://pmtiles.kbatchu.dev/Georgia_CensusTracts_PopDotDensity_100_MBTiles_Raster/{z}/{x}/{y}.png",
+              url: "https://pmtiles.kbatchu.dev/SouthCarolina_CensusTracts_PopDotDensity_500_MBTiles_Raster/{z}/{x}/{y}.png",
+              tilePixelRatio: 2 // THIS IS IMPORTANT
+            }); */
+            /*  // 06Nov2023
+            // ? Obtain extent dynamically from pmtiles file
+            TODO:If I get the extent dynamically from the pmtiles file and set the extent, it is not displaying the raster layer. However, if
+            I get the extent and hardcode it, it is displaying the raster layer.
+            const rasterLyrJSON = await (
+              await fetch(
+                "https://pmtiles.kbatchu.dev/Georgia_CensusTracts_PopDotDensity_100_MBTiles_Raster.json"
+              )
+            ).json(); */
+            // const rasterLyrExtent = transform(rasterLyrJSON.bounds); // ? output = [-9584716.337582009, 3536363.6167813744, -8942959.205992008, 4179540.6549797524]
+            rasterLyrExtent = [-9584716.337582009, 3536363.6167813744, -8942959.205992008, 4179540.6549797524];
+            /*  // ? Predetermined extent
+            const georgiaStateExtent = transform([
+              -85.605165, 30.357851, -80.839729, 35.000659
+            ]); // ? Georgia extent obtained from https://anthonylouisdagostino.com/bounding-boxes-for-all-us-states/ output = [-9529523.377074165, 3549631.687099699, -8999037.468146231, 4163970.699892604]
+            */
+            lyrSource2 = new _LimitedExtentXYZ__WEBPACK_IMPORTED_MODULE_4__["default"]({
+              projection: "EPSG:3857",
+              url: "https://pmtiles.kbatchu.dev/Georgia_CensusTracts_PopDotDensity_100_MBTiles_Raster/{z}/{x}/{y}.png",
+              extent: rasterLyrExtent,
+              tileSize: [256, 256],
+              minZoom: 0,
+              maxZoom: 23,
+              tilePixelRatio: 2 // THIS IS IMPORTANT
+            });
+            lyr = new ol_layer_WebGLTile__WEBPACK_IMPORTED_MODULE_14__["default"]({
+              minZoom: 0,
+              maxZoom: 23,
+              source: lyrSource2,
+              title: "Georgia Census Tracts Pop Dot Density 100"
+            });
+            mMapLayers.push(lyr); // 13Oct2023
+          case 4:
+          case "end":
+            return _context10.stop();
+        }
+      }, _callee10);
+    }));
+    return _addCloudflareRasterPMTilesLyr.apply(this, arguments);
+  }
+  function addCloudflareVectorUSCensusTractsPMTilesLyr() {
+    var lyrSource = new ol_source_VectorTile__WEBPACK_IMPORTED_MODULE_12__["default"]({
+      format: new ol_format_MVT__WEBPACK_IMPORTED_MODULE_13__["default"](),
+      url: "https://pmtiles.kbatchu.dev/acs5yr2021censustractsv2/{z}/{x}/{y}.mvt"
+    });
+    var vectorLyr = new ol_layer_VectorTile__WEBPACK_IMPORTED_MODULE_10__["default"]({
+      declutter: false,
+      minZoom: 0,
+      maxZoom: 23,
+      source: lyrSource,
+      title: "ACS 2021 5Yr Census Tracts",
+      // style: polyStyle,
+      style: function style(feature) {
+        if (mHighlightedCensusTractFeatProps && feature.get("GEOID") === mHighlightedCensusTractFeatProps.GeoID) {
+          return mHighlightedPolyStyle;
+        }
+        return getCenusTractFeatStyle(feature);
+      }
+    });
+    mMapLayers.push(vectorLyr);
+  }
   function loadMapLayers() {
     return _loadMapLayers.apply(this, arguments);
   }
   function _loadMapLayers() {
-    _loadMapLayers = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee10() {
+    _loadMapLayers = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee11() {
       var baseMapLyr;
-      return _regeneratorRuntime().wrap(function _callee10$(_context10) {
-        while (1) switch (_context10.prev = _context10.next) {
+      return _regeneratorRuntime().wrap(function _callee11$(_context11) {
+        while (1) switch (_context11.prev = _context11.next) {
           case 0:
-            baseMapLyr = new ol_layer_Tile__WEBPACK_IMPORTED_MODULE_18__["default"]({
+            baseMapLyr = new ol_layer_Tile__WEBPACK_IMPORTED_MODULE_19__["default"]({
               className: "bw",
-              source: new ol_source_OSM__WEBPACK_IMPORTED_MODULE_19__["default"]()
+              source: new ol_source_OSM__WEBPACK_IMPORTED_MODULE_20__["default"]()
             });
             mMapLayers.push(baseMapLyr);
 
@@ -741,14 +902,15 @@ function App() {
 
             // addCensusTractsPMTilesLyr(); // 20Oct2023
             //  const cloudflareResponse = await callCloudflareWorker("Hello World!");
+            addCloudflareVectorUSCensusTractsPMTilesLyr(); // 10Nov2023
             addHighResPopdotdensity500GitHubPMTileslyr(); // 19Oct2023
             // addLowResPopdotdensity500PMTileslyr(); // 18Oct2023
-            // addPopDotDenity500CloudflarePMTilesLyr(); // 01Nov2023
-          case 3:
+            // addCloudflarePopDotDenity500PMTilesLyr(); // 01Nov2023
+          case 4:
           case "end":
-            return _context10.stop();
+            return _context11.stop();
         }
-      }, _callee10);
+      }, _callee11);
     }));
     return _loadMapLayers.apply(this, arguments);
   }
@@ -776,7 +938,7 @@ function App() {
   }
   function hideMapTooltip() {
     // 06Oct2023
-    _lib_d3_v4_min__WEBPACK_IMPORTED_MODULE_4__.select("#" + mMapTooltipElemID).style("display", "none").html("");
+    _lib_d3_v4_min__WEBPACK_IMPORTED_MODULE_5__.select("#" + mMapTooltipElemID).style("display", "none").html("");
     mHighlightedBldgFootprintFeat = null; // 07Oct2023
     mHighlightedCensusTractFeatProps = null; // 23Oct2023
 
@@ -830,9 +992,9 @@ function App() {
     var offset = 30;
     var posX = evt.originalEvent.clientX + offset;
     var posY = evt.originalEvent.clientY + offset / 3;
-    _lib_d3_v4_min__WEBPACK_IMPORTED_MODULE_4__.select("#" + mMapTooltipElemID).html(tooltipHTML);
+    _lib_d3_v4_min__WEBPACK_IMPORTED_MODULE_5__.select("#" + mMapTooltipElemID).html(tooltipHTML);
     var pos = getToolTipCoords(posX, posY);
-    _lib_d3_v4_min__WEBPACK_IMPORTED_MODULE_4__.select("#" + mMapTooltipElemID).style("display", "block").style("opacity", 0.8).style("top", pos.PosY + "px").style("left", pos.PosX + "px");
+    _lib_d3_v4_min__WEBPACK_IMPORTED_MODULE_5__.select("#" + mMapTooltipElemID).style("display", "block").style("opacity", 0.8).style("top", pos.PosY + "px").style("left", pos.PosX + "px");
   }
 
   // 23Oct2023
@@ -846,9 +1008,9 @@ function App() {
     var offset = 30;
     var posX = evt.originalEvent.clientX + offset;
     var posY = evt.originalEvent.clientY + offset / 3;
-    _lib_d3_v4_min__WEBPACK_IMPORTED_MODULE_4__.select("#" + mMapTooltipElemID).html(tooltipHTML);
+    _lib_d3_v4_min__WEBPACK_IMPORTED_MODULE_5__.select("#" + mMapTooltipElemID).html(tooltipHTML);
     var pos = getToolTipCoords(posX, posY);
-    _lib_d3_v4_min__WEBPACK_IMPORTED_MODULE_4__.select("#" + mMapTooltipElemID).style("display", "block").style("opacity", 0.8).style("top", pos.PosY + "px").style("left", pos.PosX + "px");
+    _lib_d3_v4_min__WEBPACK_IMPORTED_MODULE_5__.select("#" + mMapTooltipElemID).style("display", "block").style("opacity", 0.8).style("top", pos.PosY + "px").style("left", pos.PosX + "px");
   }
 
   // 15Oct2023
@@ -874,20 +1036,20 @@ function App() {
     return _createMap.apply(this, arguments);
   }
   function _createMap() {
-    _createMap = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee11() {
-      return _regeneratorRuntime().wrap(function _callee11$(_context11) {
-        while (1) switch (_context11.prev = _context11.next) {
+    _createMap = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee12() {
+      return _regeneratorRuntime().wrap(function _callee12$(_context12) {
+        while (1) switch (_context12.prev = _context12.next) {
           case 0:
-            _context11.next = 2;
+            _context12.next = 2;
             return loadMapLayers();
           case 2:
             // Proj.useGeographic(); // 20Jan2023
 
-            mMapView = new ol_View__WEBPACK_IMPORTED_MODULE_20__["default"]({
+            mMapView = new ol_View__WEBPACK_IMPORTED_MODULE_21__["default"]({
               center: ol_proj__WEBPACK_IMPORTED_MODULE_1__.fromLonLat([-95.7129, 37.0902]),
               zoom: 4.2
             });
-            mMap = new ol_Map__WEBPACK_IMPORTED_MODULE_21__["default"]({
+            mMap = new ol_Map__WEBPACK_IMPORTED_MODULE_22__["default"]({
               layers: mMapLayers,
               target: mMapContainerID,
               view: mMapView
@@ -904,14 +1066,14 @@ function App() {
             });
           case 6:
           case "end":
-            return _context11.stop();
+            return _context12.stop();
         }
-      }, _callee11);
+      }, _callee12);
     }));
     return _createMap.apply(this, arguments);
   }
   publicAPI.init = function () {
-    mHelperUtil = new _helperutils__WEBPACK_IMPORTED_MODULE_5__["default"]();
+    mHelperUtil = new _helperutils__WEBPACK_IMPORTED_MODULE_6__["default"]();
     createMap();
   };
   return publicAPI;
