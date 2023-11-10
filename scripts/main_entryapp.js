@@ -189,13 +189,14 @@ function App() {
   var mHighlightedBldgFootprintFeat; // 07Oct2023
   var mCountiesMapTopoJSON; // 17Oct2023
   var mHighlightedCensusTractFeatProps; // 23Oct2023
+
   var mHighlightedPolyStyle = new ol_style__WEBPACK_IMPORTED_MODULE_7__["default"]({
     stroke: new ol_style__WEBPACK_IMPORTED_MODULE_8__["default"]({
-      color: "gray",
-      width: 1
+      color: "cyan",
+      width: 1.5
     }),
     fill: new ol_style__WEBPACK_IMPORTED_MODULE_9__["default"]({
-      color: "orange"
+      color: "cyan"
     })
   });
   publicAPI.setMediator = function (m) {
@@ -224,26 +225,16 @@ function App() {
     });
     return bldgStyle;
   }
+  var linearColorScale = _lib_d3_v4_min__WEBPACK_IMPORTED_MODULE_5__.scaleLinear().domain([0, 8000]).range(["yellow", "orange"]).interpolate(_lib_d3_v4_min__WEBPACK_IMPORTED_MODULE_5__.interpolateHcl);
   function getCenusTractFeatStyle(feature) {
     var popCount = feature.get("POP_COUNT");
-    var color;
-    if (popCount > 0 && popCount < 1000) {
-      color = "blue";
-    } else if (popCount >= 1000 && popCount < 2000) {
-      color = "green";
-    } else if (popCount >= 2000 && popCount < 3000) {
-      color = "yellow";
-    } else if (popCount >= 3000 && popCount < 4000) {
-      color = "orange";
-    } else if (popCount >= 4000) {
-      color = "red";
-    }
+    var color = linearColorScale(popCount);
     var censusTractStyle = new ol_style__WEBPACK_IMPORTED_MODULE_7__["default"]({
       fill: new ol_style__WEBPACK_IMPORTED_MODULE_9__["default"]({
         color: color
       }),
       stroke: new ol_style__WEBPACK_IMPORTED_MODULE_8__["default"]({
-        color: color,
+        color: "gray",
         width: 1
       })
     });
