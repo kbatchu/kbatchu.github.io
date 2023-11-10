@@ -893,11 +893,11 @@ function App() {
 
             // addCensusTractsPMTilesLyr(); // 20Oct2023
             //  const cloudflareResponse = await callCloudflareWorker("Hello World!");
-            addCloudflareVectorUSCensusTractsPMTilesLyr(); // 10Nov2023
+            // addCloudflareVectorUSCensusTractsPMTilesLyr(); // 10Nov2023
             addHighResPopdotdensity500GitHubPMTileslyr(); // 19Oct2023
             // addLowResPopdotdensity500PMTileslyr(); // 18Oct2023
             // addCloudflarePopDotDenity500PMTilesLyr(); // 01Nov2023
-          case 4:
+          case 3:
           case "end":
             return _context11.stop();
         }
