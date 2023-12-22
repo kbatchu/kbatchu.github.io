@@ -189,6 +189,7 @@ function App() {
   var mHighlightedBldgFootprintFeat; // 07Oct2023
   var mCountiesMapTopoJSON; // 17Oct2023
   var mHighlightedCensusTractFeatProps; // 23Oct2023
+  var dummyVar = ""; // 22Dec2023 // added to make a difference in compiled files.
 
   var mHighlightedPolyStyle = new ol_style__WEBPACK_IMPORTED_MODULE_7__["default"]({
     stroke: new ol_style__WEBPACK_IMPORTED_MODULE_8__["default"]({
@@ -269,6 +270,23 @@ function App() {
     mMapLayers.push(pmtilesVectorLayer);
   }
 
+  // 10Nov2023
+  function pointStyleFunction(feature, resolution) {
+    var zoom = mMapView.getZoomForResolution(resolution);
+    var linearRadiusScale = _lib_d3_v4_min__WEBPACK_IMPORTED_MODULE_5__.scaleLinear().domain([0, 20]).range([1, 2]);
+    var pointRadius = linearRadiusScale(zoom);
+    var pointStyle = new ol_style__WEBPACK_IMPORTED_MODULE_7__["default"]({
+      image: new ol_style__WEBPACK_IMPORTED_MODULE_11__["default"]({
+        radius: pointRadius,
+        fill: new ol_style__WEBPACK_IMPORTED_MODULE_9__["default"]({
+          // color: "rgba(0,0,255,0.9)"
+          color: "rgba(17,123,227,0.5)"
+        })
+      })
+    });
+    return pointStyle;
+  }
+
   // 18Oct2023
   function addLowResPopdotdensity500PMTileslyr() {
     var lyrSource = new ol_pmtiles__WEBPACK_IMPORTED_MODULE_2__.PMTilesVectorSource({
@@ -276,22 +294,14 @@ function App() {
       url: "https://wipv-grsp-8.cdc.gov/GRASP/Diabetes/data/pmtiles/acs5yr2021popdotdensity500lowres.pmtiles",
       attributions: ["© created by CDC/GRASP"]
     });
-    var pointStyle = new ol_style__WEBPACK_IMPORTED_MODULE_7__["default"]({
-      image: new ol_style__WEBPACK_IMPORTED_MODULE_11__["default"]({
-        radius: 1,
-        fill: new ol_style__WEBPACK_IMPORTED_MODULE_9__["default"]({
-          // color: "rgba(0,0,255,0.9)"
-          color: "rgba(17,123,227,0.5)"
-        })
-      })
-    });
     var pmtilesVectorLayer = new ol_layer_VectorTile__WEBPACK_IMPORTED_MODULE_10__["default"]({
       declutter: false,
       minZoom: 0,
       maxZoom: 13,
       source: lyrSource,
       title: "Census Tracts Popdot Density 500",
-      style: pointStyle
+      // 10Nov2023 style: pointStyle
+      style: pointStyleFunction
     });
     mMapLayers.push(pmtilesVectorLayer);
   }
@@ -894,8 +904,8 @@ function App() {
             // addCensusTractsPMTilesLyr(); // 20Oct2023
             //  const cloudflareResponse = await callCloudflareWorker("Hello World!");
             // addCloudflareVectorUSCensusTractsPMTilesLyr(); // 10Nov2023
-            addHighResPopdotdensity500GitHubPMTileslyr(); // 19Oct2023
-            // addLowResPopdotdensity500PMTileslyr(); // 18Oct2023
+            // addHighResPopdotdensity500GitHubPMTileslyr(); // 19Oct2023
+            addLowResPopdotdensity500PMTileslyr(); // 18Oct2023
             // addCloudflarePopDotDenity500PMTilesLyr(); // 01Nov2023
           case 3:
           case "end":
@@ -86422,7 +86432,7 @@ _global["default"]._babelPolyfill = true;
   \*******************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app */ "./scripts/app.js");
-// 
+//
 
 // const app = new PMTilesVectorLayer();
 
